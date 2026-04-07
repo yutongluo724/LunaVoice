@@ -22,3 +22,9 @@ export interface JournalEntry {
   transcript: string;
   signals: HealthSignals;
 }
+
+export interface CycleRecord {
+  id: string;
+  startDate: string;
+  endDate?: string;
+}

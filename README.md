@@ -12,6 +12,7 @@ We wanted to see if a voice-first interface could make health tracking feel less
 - **Automated Signal Extraction:** A system that transcribes speech and identifies structured data like pain types, energy levels, and sleep quality.
 - **Soft Emotional Context:** Identifying gentle emotional cues (e.g., "overwhelmed" or "steady") to provide context for the user's entries.
 - **User-in-the-Loop Review:** A screen that allows users to confirm, edit, or delete the extracted information before it is saved.
+- **Cycle Recording:** Users can now tap any date on the calendar to mark the start or end of their period, allowing for real-time cycle tracking.
 - **Doctor-Ready Summaries:** A simple text-based summary of 30 days of data, designed to be shared during a medical appointment.
 
 # What We Learned

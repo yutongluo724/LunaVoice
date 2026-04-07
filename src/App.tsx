@@ -7,7 +7,7 @@ import { Calendar } from './views/Calendar';
 import { Insights } from './views/Insights';
 import { Reflect } from './views/Reflect';
 import { Review } from './views/Review';
-import { JournalEntry } from './types';
+import { JournalEntry, CycleRecord } from './types';
 import { mockEntries } from './data';
 
 export type Tab = 'home' | 'journal' | 'calendar' | 'insights' | 'reflect' | 'review';
@@ -15,6 +15,7 @@ export type Tab = 'home' | 'journal' | 'calendar' | 'insights' | 'reflect' | 're
 export default function App() {
   const [currentTab, setCurrentTab] = useState<Tab>('home');
   const [entries, setEntries] = useState<JournalEntry[]>(mockEntries);
+  const [cycleRecords, setCycleRecords] = useState<CycleRecord[]>([]);
   const [pendingEntry, setPendingEntry] = useState<JournalEntry | null>(null);
 
   const handleRecordComplete = (entry: JournalEntry) => {
@@ -38,7 +39,13 @@ export default function App() {
       <main className="flex-1 overflow-y-auto pb-24">
         {currentTab === 'home' && <Home onRecordComplete={handleRecordComplete} />}
         {currentTab === 'journal' && <Journal entries={entries} />}
-        {currentTab === 'calendar' && <Calendar entries={entries} />}
+        {currentTab === 'calendar' && (
+          <Calendar 
+            entries={entries} 
+            cycleRecords={cycleRecords} 
+            onUpdateCycleRecords={setCycleRecords} 
+          />
+        )}
         {currentTab === 'insights' && <Insights entries={entries} />}
         {currentTab === 'reflect' && <Reflect />}
         {currentTab === 'review' && pendingEntry && (
