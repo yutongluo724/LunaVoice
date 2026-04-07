@@ -1,0 +1,5 @@
+{
+  "name": "LunaVoice",
+  "description": "A voice-first, cycle-aware women's wellness app.",
+  "requestFramePermissions": ["microphone"]
+}
